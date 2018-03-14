@@ -1,0 +1,33 @@
+@model WebMvc.Models.PessoaViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+<h2>Index</h2>
+<p>
+    <a asp-action="Create">Create New</a></p>            
+
+<table class="table">
+
+    <thead>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+        @foreach(var item in Model.Items)
+        {
+            <tr>           
+            <td>@item.Nome</td>
+            <td>
+              <a asp-action="Edit" asp-rout-id="@item.Id">Edit</a>
+              <a asp-action="Details" asp-rout-id="@item.Id">Details</a>
+              <a asp-action="Delete" asp-rout-id="@item.Id">Delete</a>
+              </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
